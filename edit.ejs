@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit page</title>
+    <link rel="stylesheet" href="/style2.css">
+</head>
+
+<body>
+    <h2 class="heading"><center>Edit Your Username</center></h2>
+    <form method="post" action="/user/<%= user.id %>?_method=PATCH" class="form">
+        <textarea name="user" class="text"><%= user.user %></textarea><br>
+        <input type="password" name="password" placeholder="Enter your password" class="input" required><br><br>
+        <button class="btn">Submit</button>
+    </form>
+</body>

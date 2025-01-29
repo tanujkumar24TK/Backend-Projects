@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <style>
+        tr,
+        th,
+        td {
+            border: 1px solid blue;
+            padding: 2px 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h2 class="name">
+        <center>freshBook</center>
+    </h2>
+    <!-- <table>
+        <tr>
+            <th>Id</th>
+            <th>User</th>
+            <th>Username</th>
+            <th>
+                <form method="get" action="/user/new">
+                    <button>Add New user</button>
+                </form>
+            </th>
+            <th>
+                <form method="get" action="/">
+                    <button>Total User</button>
+                </form>
+            </th>
+        </tr>
+        <% for(user of users) { %>
+            <tr>
+                <td><%= user.id %></td>
+                <td><%= user.user %></td>
+                <td><%= user.username %></td>
+                <td>
+                    <form method="get" action="/user/<%= user.id %>/edit">
+                        <button>Edit User</button>
+                    </form>
+                </td>
+                <td>
+                    <form method="get" action="/user/<%= user.id %>">
+                        <button>Delete</button>
+                    </form>
+                </td>
+            </tr>
+        <% } %>  
+    </table> -->
+
+    <hr>
+    <div class="btns">
+        <form method="get" action="/user/new">
+            <button class="nav-btn">Add New user</button>
+        </form>&nbsp;
+        <form method="get" action="/">
+            <button class="nav-btn">Total User</button>
+        </form>
+    </div>
+    <hr>
+    <div class="container">
+        <% for(user of users) { %>
+            <div class="box">
+                <h3><span>Id:</span>
+                    <%= user.id %>
+                </h3><br>
+                <h2><span>User:</span>
+                    <%= user.user %>
+                </h2><br>
+                <h3><span>Username:</span>
+                    <%= user.username %>
+                </h3><br>
+                <div class="buttons">
+                    <form method="get" action="/user/<%= user.id %>/edit">
+                        <button class="box-btn">Edit User</button>
+                    </form>&nbsp; &nbsp;
+                    <form method="get" action="/user/<%= user.id %>">
+                        <button class="box-btn">Delete</button>
+                    </form>
+                    <form method="get" action="/user/<%= user.id %>/show">
+                        <button class="box-btn">See User</button>
+                    </form>
+                </div>
+            </div>
+            <% } %>
+    </div>
+</body>
